@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Management Tool</title>
+</head>
+<body>
+        <select name="id" id="id">
+            <option>Select an Employee</option>
+            {% for detail in details %}
+            <option value="{{detail.Employee_ID}}" >{{detail.First_Name }} {{detail.Last_Name}}</option>
+            {% endfor %}
+        </select><br><br>
+        <button onclick='check()'>Go</button>
+
+            {% block javascript %}
+                <script>
+                    function check() {
+                    let id= document.getElementById("id").value ;
+                    console.log(id)
+                    document.location.href="employee/" + id
+                }
+                </script>
+            {% endblock %}
+
+</body>
+</html>
