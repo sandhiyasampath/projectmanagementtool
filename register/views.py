@@ -1,5 +1,7 @@
 from django.shortcuts import render,redirect
 from.models import Employees,Projects
+from datetime import date 
+
 # Create your views here.
 def home(request):
         details = Employees.objects.all()
@@ -7,5 +9,7 @@ def home(request):
 
 def employeeDetails(request,id):
         detail = Employees.objects.get(Employee_ID=id)
-        print(detail.phone_number)
         return render(request,'empDetails.html',{'detail' : detail})
+
+
+  

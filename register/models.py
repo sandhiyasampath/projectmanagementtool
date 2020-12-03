@@ -6,7 +6,7 @@ class Employees(models.Model):
     Employee_ID = models.CharField(max_length=100)
     First_Name = models.CharField(max_length=100)
     Last_Name = models.CharField(max_length=100)
-    Date_Of_Birth = models.DateField(auto_now=False)
+    Date_Of_Birth = models.DateField()
     Email = models.EmailField()
     phone_number = PhoneNumberField()
     Designation = models.TextField(max_length=100)

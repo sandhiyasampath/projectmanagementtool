@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Project Management Tool</title>
 </head>
 <body>
     <div>
         <h1>Employee Detail:</h1>
 
                 {% block content %}
-                    <p>Employee Name:{{detail.First_Name}} {{detail.Last_Name}}<br>
+                    <p>Employee Name: {{detail.First_Name}} {{detail.Last_Name}}<br>
                     Employee ID: {{detail.Employee_ID}}<br>
-                    Age:<br>
+                    Age:{{detail.Date_Of_Birth}}<br>
                     Email:{{detail.Email}}<br>
                     Phone Number:{{detail.phone_number}}<br></p>
                 {% endblock content %}
