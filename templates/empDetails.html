@@ -10,13 +10,23 @@
         <h1>Employee Detail:</h1>
 
                 {% block content %}
-                <p>Employee Name: {{detail.First_Name}} {{detail.Last_Name}}</p><br>
-                <p>Employee ID: {{detail.Employee_ID}}</p><br>
-                <p>Age:{{age}}</p><br>
-                <p>Email:{{detail.Email}}</p><br>
-                <p>Email:{{detail.Email}}</p><br>
-                <p>Phone Number:{{detail.phone_number}}</p><br>
+                <p>Employee Name: {{detail.First_Name}} {{detail.Last_Name}}<br>
+                Employee ID: {{detail.Employee_ID}}<br>
+                Age:{{age}}<br>
+                Email:{{detail.Email}}<br>
+                Email:{{detail.Email}}<br>
+                Phone Number:{{detail.phone_number}}<br></p>
                 {% endblock content %}
+    </div>
+
+    <div>
+        <h1>Projects:</h1>
+                <p>
+                    {{detail.Employees_projects}}
+                </p>
+
+
+
     </div>
 </body>
 </html>
