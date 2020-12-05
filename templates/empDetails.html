@@ -14,16 +14,18 @@
                 Employee ID: {{detail.Employee_ID}}<br>
                 Age:{{age}}<br>
                 Email:{{detail.Email}}<br>
-                Email:{{detail.Email}}<br>
+                Designation:{{detail.Designation}}<br>
                 Phone Number:{{detail.phone_number}}<br></p>
                 {% endblock content %}
     </div>
 
     <div>
         <h1>Projects:</h1>
+        {% for project in projects %}
                 <p>
-                    {{detail.Employees_projects}}
+                    {{project}}
                 </p>
+                {% endfor %}
 
 
 

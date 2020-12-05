@@ -12,9 +12,11 @@ def employeeDetails(request,id):
         detail = Employees.objects.get(Employee_ID=id)
         today = date.today() 
         age = (today.year - detail.Date_Of_Birth.year - ((today.month, today.day) < (detail.Date_Of_Birth.month, detail.Date_Of_Birth.day)))
+        projects = detail.Employees_projects.all()
+        print([projects])
+ 
 
-
-        return render(request,'empDetails.html',{'detail' : detail,'age':age})
+        return render(request,'empDetails.html',{'detail' : detail,'age':age, 'projects': projects})
 
 
   
