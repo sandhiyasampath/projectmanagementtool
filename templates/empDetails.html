@@ -3,19 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Project Management Tool</title>
 </head>
 <body>
     <div>
         <h1>Employee Detail:</h1>
 
                 {% block content %}
-                    <p>Employee Name:{{detail.First_Name}} {{detail.Last_Name}}<br>
-                    Employee ID: {{detail.Employee_ID}}<br>
-                    Age:<br>
-                    Email:{{detail.Email}}<br>
-                    Phone Number:{{detail.phone_number}}<br></p>
+                <p>Employee Name: {{detail.First_Name}} {{detail.Last_Name}}<br>
+                Employee ID: {{detail.Employee_ID}}<br>
+                Age:{{age}}<br>
+                Email:{{detail.Email}}<br>
+                Designation:{{detail.Designation}}<br>
+                Phone Number:{{detail.phone_number}}<br></p>
                 {% endblock content %}
+    </div>
+
+    <div>
+        <h1>Projects:</h1>
+        {% for project in projects %}
+                <p>
+                    {{project}}
+                </p>
+                {% endfor %}
+
+
+
     </div>
 </body>
 </html>
