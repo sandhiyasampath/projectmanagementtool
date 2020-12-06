@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from.models import Employees,Projects,ProjectDetails
+from.models import Employees,Projects
 from datetime import date 
 
 

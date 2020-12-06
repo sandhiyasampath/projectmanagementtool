@@ -2,13 +2,6 @@ from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
 
 # Create your models here.
-class ProjectDetails(models.Model):
-
-    Project_ID = models.IntegerField()
-    Project_Name = models.CharField(max_length=100)
-    Project_Manager = models.CharField(max_length=100)
-    Start_Date = models.DateField()
-    End_Date = models.DateField()
 
 class Projects(models.Model):
     Project = models.CharField(max_length=100)
