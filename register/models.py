@@ -11,7 +11,6 @@ class Projects(models.Model):
 
 
 class Employees(models.Model):
-    Employee_ID = models.CharField(max_length=100)
     First_Name = models.CharField(max_length=100)
     Last_Name = models.CharField(max_length=100)
     Date_Of_Birth = models.DateField()
