@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Management Tool</title>
 </head>
+<div> 
+     <h2 style="text-align:center";>Project Management Tool</h2>
+</div>
 <body>
+    <div style="text-align: left;">
         <select name="id" id="id">
             <option>Select an Employee</option>
             {% for detail in details %}
@@ -14,14 +18,27 @@
         </select><br><br>
         <button onclick='check()'>Go</button>
 
-            {% block javascript %}
+            {% block javascript1 %}
                 <script>
                     function check() {
                     let id= document.getElementById("id").value ;
                     document.location.href="employee/" + id
                 }
                 </script>
-            {% endblock %}
+            {% endblock javascript1 %}
+    </div>
+    <div style="text-align:right;">
+            <form action="employeeDetail">
+            <input type="text" placeholder="Search.." name="employeeName">
+            <input type="submit">
+            </form>
+    </div>
+    <div style="text-align: center;">
+        {% for message in messages %}
+            <h3>{{message}}</h3>
+        {% endfor %}
+    </div>
+
 
 </body>
 </html>
