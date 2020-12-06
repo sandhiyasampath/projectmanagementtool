@@ -4,23 +4,25 @@ from phonenumber_field.modelfields import PhoneNumberField
 # Create your models here.
 
 class Projects(models.Model):
-    Project = models.CharField(max_length=100)
+    projectName = models.CharField(max_length=100)
+    startDate = models.DateField(auto_now=True)
+    endDate = models.DateField()
 
     def __str__(self):
-        return self.Project
+        return self.projectName
 
 
 class Employees(models.Model):
-    First_Name = models.CharField(max_length=100)
-    Last_Name = models.CharField(max_length=100)
-    Date_Of_Birth = models.DateField()
-    Email = models.EmailField()
-    phone_number = PhoneNumberField()
-    Designation = models.CharField(max_length=100)
-    Employees_projects = models.ManyToManyField(Projects)
+    firstName = models.CharField(max_length=100)
+    lastName = models.CharField(max_length=100)
+    dob = models.DateField()
+    email = models.EmailField()
+    phoneNumber = PhoneNumberField()
+    designation = models.CharField(max_length=100)
+    projects = models.ManyToManyField(Projects)
 
     def __str__(self):
-        return self.First_Name
+        return self.firstName
 
 
 
