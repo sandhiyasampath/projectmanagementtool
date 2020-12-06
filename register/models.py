@@ -2,33 +2,27 @@ from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
 
 # Create your models here.
-class ProjectDetails(models.Model):
-
-    Project_ID = models.IntegerField()
-    Project_Name = models.CharField(max_length=100)
-    Project_Manager = models.CharField(max_length=100)
-    Start_Date = models.DateField()
-    End_Date = models.DateField()
 
 class Projects(models.Model):
-    Project = models.CharField(max_length=100)
+    projectName = models.CharField(max_length=100)
+    startDate = models.DateField(auto_now=True)
+    endDate = models.DateField()
 
     def __str__(self):
-        return self.Project
+        return self.projectName
 
 
 class Employees(models.Model):
-    Employee_ID = models.CharField(max_length=100)
-    First_Name = models.CharField(max_length=100)
-    Last_Name = models.CharField(max_length=100)
-    Date_Of_Birth = models.DateField()
-    Email = models.EmailField()
-    phone_number = PhoneNumberField()
-    Designation = models.CharField(max_length=100)
-    Employees_projects = models.ManyToManyField(Projects)
+    firstName = models.CharField(max_length=100)
+    lastName = models.CharField(max_length=100)
+    dob = models.DateField()
+    email = models.EmailField()
+    phoneNumber = PhoneNumberField()
+    designation = models.CharField(max_length=100)
+    projects = models.ManyToManyField(Projects)
 
     def __str__(self):
-        return self.First_Name
+        return self.firstName
 
 
 

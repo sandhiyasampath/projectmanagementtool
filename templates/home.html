@@ -9,7 +9,7 @@
         <select name="id" id="id">
             <option>Select an Employee</option>
             {% for detail in details %}
-            <option value="{{detail.Employee_ID}}" >{{detail.First_Name }} {{detail.Last_Name}}</option>
+            <option value="{{detail.id}}" >{{detail.firstName }} {{detail.lastName}}</option>
             {% endfor %}
         </select><br><br>
         <button onclick='check()'>Go</button>
@@ -18,7 +18,6 @@
                 <script>
                     function check() {
                     let id= document.getElementById("id").value ;
-                    console.log(id)
                     document.location.href="employee/" + id
                 }
                 </script>
