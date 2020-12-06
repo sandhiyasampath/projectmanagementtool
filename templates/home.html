@@ -5,37 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Management Tool</title>
 </head>
-<div> 
-     <h2 style="text-align:center";>Project Management Tool</h2>
-</div>
+    <div> 
+        <h2 style="text-align:center";>Project Management Tool</h2>
+    </div style="width: 50%; float: left">
 <body>
-    <div style="text-align: left;">
-        <select name="id" id="id">
-            <option>Select an Employee</option>
-            {% for detail in details %}
-            <option value="{{detail.id}}" >{{detail.firstName }} {{detail.lastName}}</option>
-            {% endfor %}
-        </select><br><br>
-        <button onclick='check()'>Go</button>
+    <div>
+        <div style="width:50% ; float:left;text-align: left;">
+            <h3>Select an Employee</h3>
+            <select name="id" id="id">
+                <option>Select an Employee</option>
+                {% for detail in details %}
+                <option value="{{detail.id}}" >{{detail.firstName }} {{detail.lastName}}</option>
+                {% endfor %}
+            </select><br><br>
+            <button onclick='check()'>Go</button>
 
-            {% block javascript1 %}
-                <script>
-                    function check() {
-                    let id= document.getElementById("id").value ;
-                    document.location.href="employee/" + id
-                }
-                </script>
-            {% endblock javascript1 %}
+                {% block javascript1 %}
+                    <script>
+                        function check() {
+                        let id= document.getElementById("id").value ;
+                        document.location.href="employee/" + id
+                    }
+                    </script>
+                {% endblock javascript1 %}
+        </div>
+        <div style="width:50% ; float: right;text-align: right;">
+            <h3>Search Employee</h3>
+                <form action="employeeDetail">
+                <input type="text" placeholder="Search..." name="employeeName">
+                <button>Search</button>
+                </form>
+        </div>
     </div>
-    <div style="text-align:right;">
-            <form action="employeeDetail">
-            <input type="text" placeholder="Search.." name="employeeName">
-            <input type="submit">
-            </form>
-    </div>
-    <div style="text-align: center;">
+        
+    <div style="text-align: right;">
         {% for message in messages %}
-            <h3>{{message}}</h3>
+            <h4>{{message}}</h4>
         {% endfor %}
     </div>
 
