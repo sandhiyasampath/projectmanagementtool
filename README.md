@@ -24,7 +24,7 @@
 
     Note: Please create some employees and projects to access it.
 
-Ponus-Point
+Bonus-Point
     1.Implemented Case insensitive Search
     2.It will not work for partial search
     3.if you given any wrong input it will show you the proper message
